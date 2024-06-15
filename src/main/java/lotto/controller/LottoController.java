@@ -1,21 +1,21 @@
 package lotto.controller;
 
 import lotto.dto.LottoNumberResponse;
-import lotto.model.AutomaticPurchase;
 import lotto.model.Lotto;
-import lotto.model.LottoMachine;
 import lotto.model.LottoPaper;
-import lotto.model.ManualPurchase;
 import lotto.model.Money;
 import lotto.model.Prize;
 import lotto.model.WinningLotto;
+import lotto.model.strategy.AutomaticPurchase;
+import lotto.model.strategy.LottoMachine;
+import lotto.model.strategy.ManualPurchase;
 import lotto.view.InputView;
 import lotto.view.ResultView;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static lotto.model.LottoMachine.EMPTY;
+import static lotto.model.strategy.LottoMachine.EMPTY;
 
 public class LottoController {
     private final InputView inputView;
