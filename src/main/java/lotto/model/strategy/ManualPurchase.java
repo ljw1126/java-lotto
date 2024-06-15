@@ -25,7 +25,11 @@ public class ManualPurchase extends LottoMachine {
 
     private Integer[] toIntegers(String lotto) {
         return Arrays.stream(lotto.split(","))
-                .map(text -> Integer.valueOf(text.trim()))
+                .map(String::trim)
+                .map(Integer::valueOf)
                 .toArray(Integer[]::new);
     }
 }
+    
+
+
