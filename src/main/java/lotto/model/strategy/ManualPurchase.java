@@ -18,8 +18,14 @@ public class ManualPurchase extends LottoMachine {
         }
 
         return customLotto.stream()
-                .map(lotto -> Arrays.stream(lotto.split(",")).map(text -> Integer.valueOf(text.trim())).toArray(Integer[]::new))
+                .map(this::toInteger)
                 .map(LottoNumberFactory::of)
                 .collect(toList());
+    }
+
+    private Integer[] toInteger(String lotto) {
+        return Arrays.stream(lotto.split(","))
+                .map(text -> Integer.valueOf(text.trim()))
+                .toArray(Integer[]::new);
     }
 }
