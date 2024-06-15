@@ -12,7 +12,7 @@ public class AutomaticPurchase extends LottoMachine {
     protected List<Lotto> execute(int quantity, List<String> customLotto) {
         List<Lotto> result = new ArrayList<>();
         for (int i = 1; i <= quantity; i++) {
-            result.add(new Lotto(LottoNumberFactory.selectRandomLottoNumbers()));
+            result.add(LottoNumberFactory.selectRandomLotto());
         }
 
         return result;

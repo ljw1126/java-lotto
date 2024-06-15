@@ -33,10 +33,10 @@ public class LottoNumberFactory {
         return new Lotto(result);
     }
 
-    public static List<LottoNumber> selectRandomLottoNumbers() {
+    public static Lotto selectRandomLotto() {
         List<LottoNumber> shuffled = new ArrayList<>(LOTTO_NUMBERS);
         Collections.shuffle(shuffled);
-        return shuffled.subList(START_INCLUSIVE, END_EXCLUSIVE);
+        return new Lotto(shuffled.subList(START_INCLUSIVE, END_EXCLUSIVE));
     }
 
 }
