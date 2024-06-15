@@ -1,5 +1,7 @@
 package lotto.model;
 
+import lotto.model.strategy.LottoMachine;
+import lotto.model.strategy.ManualPurchase;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
