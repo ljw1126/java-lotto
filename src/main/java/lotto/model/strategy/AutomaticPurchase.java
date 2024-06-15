@@ -1,4 +1,7 @@
-package lotto.model;
+package lotto.model.strategy;
+
+import lotto.model.Lotto;
+import lotto.model.LottoNumberFactory;
 
 import java.util.ArrayList;
 import java.util.List;

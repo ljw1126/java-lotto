@@ -1,10 +1,12 @@
 package lotto.model;
 
+import lotto.model.strategy.AutomaticPurchase;
+import lotto.model.strategy.LottoMachine;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static lotto.model.LottoMachine.EMPTY;
+import static lotto.model.strategy.LottoMachine.EMPTY;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class AutomaticPurchaseTest {
