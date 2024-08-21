@@ -8,9 +8,6 @@ public class OperandValidator implements ExpressionCount {
     private static final Pattern OPERAND_PATTERN = Pattern.compile("\\d+");
     private static final Pattern START_WITH_NUMBER_PATTERN = Pattern.compile("^\\d");
 
-    public OperandValidator() {
-    }
-
     public int countByExpression(String input) {
         assertNullOrBlank(input);
         assertStartWithNumber(input);

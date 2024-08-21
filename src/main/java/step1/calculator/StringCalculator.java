@@ -10,9 +10,6 @@ public class StringCalculator {
     private static final OperationValidator validator = new OperationValidator();
     private static final String BLANK = " ";
 
-    public StringCalculator() {
-    }
-
     public int evaluate(String input) {
         validator.assertOperation(input);
         return evaluatePostFix(toPostFix(input));

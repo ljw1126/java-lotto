@@ -7,8 +7,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static java.util.stream.Collectors.toList;
-
 public class ManualPurchase extends LottoMachine {
 
     @Override
@@ -20,7 +18,7 @@ public class ManualPurchase extends LottoMachine {
         return customLotto.stream()
                 .map(this::toIntegers)
                 .map(LottoNumberFactory::of)
-                .collect(toList());
+                .toList();
     }
 
     private Integer[] toIntegers(String lotto) {

@@ -13,7 +13,6 @@ import lotto.view.InputView;
 import lotto.view.ResultView;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static lotto.model.strategy.LottoMachine.EMPTY;
 
@@ -59,7 +58,7 @@ public class LottoController {
         List<List<String>> lottoNumberList = lottoPaper.mapToList();
         return lottoNumberList.stream()
                 .map(LottoNumberResponse::new)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     private void printLottoPrizeResult(LottoPaper lottoPaper) {

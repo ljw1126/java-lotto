@@ -6,6 +6,8 @@ import static lotto.model.LottoNumber.MAX_NUMBER;
 import static lotto.model.LottoNumber.MIN_NUMBER;
 
 public class LottoNumberValidator {
+    private LottoNumberValidator() {
+    }
 
     public static void assertInvalidNumber(int number) {
         if (number < MIN_NUMBER || MAX_NUMBER < number) {

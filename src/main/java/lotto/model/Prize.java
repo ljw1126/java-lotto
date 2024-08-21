@@ -32,9 +32,11 @@ public class Prize {
     // 수익률 = 총 수익 / 총 비용
     public double rateOfReturn(int quantity) {
         long totalReward = 0L;
-        for (Rank key : prizeMap.keySet()) {
-            int reward = key.getReward();
-            int count = prizeMap.get(key);
+
+        for (Map.Entry<Rank, Integer> entrySet : prizeMap.entrySet()) {
+            Rank rank = entrySet.getKey();
+            int reward = rank.getReward();
+            int count = entrySet.getValue();
             totalReward += ((long) reward * count);
         }
 

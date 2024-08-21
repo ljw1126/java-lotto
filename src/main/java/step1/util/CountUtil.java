@@ -4,6 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CountUtil {
+    private CountUtil() {
+    }
+
     public static int countByExpression(String input, Pattern pattern) {
         Matcher matcher = pattern.matcher(input);
 

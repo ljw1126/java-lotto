@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public enum Rank {
@@ -43,7 +42,7 @@ public enum Rank {
         sortedRank = Stream.of(values())
                 .filter(rank -> !rank.equals(NO_MATCH))
                 .sorted(Comparator.comparingInt(value -> value.reward))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public static List<Rank> ranks() {

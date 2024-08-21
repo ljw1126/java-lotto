@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import static java.util.stream.Collectors.toList;
 import static lotto.model.LottoNumber.MAX_NUMBER;
 import static lotto.model.LottoNumber.MIN_NUMBER;
 import static lotto.validation.LottoNumberValidator.assertInvalidNumber;
@@ -19,7 +18,10 @@ public class LottoNumberFactory {
     static {
         LOTTO_NUMBERS = IntStream.rangeClosed(MIN_NUMBER, MAX_NUMBER)
                 .mapToObj(LottoNumber::new)
-                .collect(toList());
+                .toList();
+    }
+
+    private LottoNumberFactory() {
     }
 
     public static Lotto of(Integer... numbers) {

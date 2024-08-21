@@ -3,6 +3,8 @@ package lotto.validation;
 import static lotto.model.Money.LOTTO_PER_MONEY;
 
 public class MoneyValidator {
+    private MoneyValidator() {
+    }
 
     public static void assertMoney(int money) {
         if (money < LOTTO_PER_MONEY) {

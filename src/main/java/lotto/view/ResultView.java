@@ -5,9 +5,12 @@ import lotto.model.Prize;
 import lotto.model.Rank;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class ResultView {
+    private static final Logger LOGGER = Logger.getLogger(ResultView.class.getName());
     private static final String NEW_LINE = System.lineSeparator();
 
     private static final String QUANTITY_RESULT_FORMAT = "수동으로 %d장, 자동으로 %d개를 구매했습니다.";
@@ -27,7 +30,9 @@ public class ResultView {
             sb.append(toJoinNumbers(response.getNumbers())).append(NEW_LINE);
         }
 
-        System.out.println(sb);
+        if (LOGGER.isLoggable(Level.INFO)) {
+            LOGGER.info(sb.toString());
+        }
     }
 
     private String toJoinNumbers(List<String> lottoNumbers) {
@@ -42,7 +47,9 @@ public class ResultView {
         appendResult(sb, prize);
         appendRateOfReturn(sb, rateOfReturn);
 
-        System.out.println(sb);
+        if (LOGGER.isLoggable(Level.INFO)) {
+            LOGGER.info(sb.toString());
+        }
     }
 
     private void appendPrefix(StringBuilder sb) {

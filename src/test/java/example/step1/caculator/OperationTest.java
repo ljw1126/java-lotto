@@ -1,4 +1,4 @@
-package step1.caculator;
+package example.step1.caculator;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

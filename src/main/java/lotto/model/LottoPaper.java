@@ -5,8 +5,6 @@ import lotto.exception.InvalidLottoException;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static java.util.stream.Collectors.toList;
-
 public class LottoPaper {
     private final List<Lotto> userLottos;
 
@@ -25,7 +23,7 @@ public class LottoPaper {
     public List<List<String>> mapToList() {
         return this.userLottos.stream()
                 .map(Lotto::mapToList)
-                .collect(toList());
+                .toList();
     }
 
     public Prize matches(WinningLotto winningLotto) {
@@ -35,12 +33,12 @@ public class LottoPaper {
     private List<Rank> toRanks(WinningLotto winningLotto) {
         return this.userLottos.stream()
                 .map(lotto -> lotto.match(winningLotto))
-                .collect(toList());
+                .toList();
     }
 
     private List<Lotto> merge(List<Lotto> manualLottos, List<Lotto> automaticLottos) {
         return Stream.concat(manualLottos.stream(), automaticLottos.stream())
-                .collect(toList());
+                .toList();
     }
 
     public int getQuantityTotal() {

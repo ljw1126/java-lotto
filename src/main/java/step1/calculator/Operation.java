@@ -2,7 +2,7 @@ package step1.calculator;
 
 import java.util.Arrays;
 import java.util.Map;
-import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
 
 import static java.util.stream.Collectors.toMap;
 
@@ -13,9 +13,9 @@ public enum Operation {
     DIVIDE("/", (x, y) -> y == 0 ? 0 : x / y);
 
     private final String symbol;
-    private final BiFunction<Integer, Integer, Integer> calculator;
+    private final BinaryOperator<Integer> calculator;
 
-    Operation(String symbol, BiFunction<Integer, Integer, Integer> calculator) {
+    Operation(String symbol, BinaryOperator<Integer> calculator) {
         this.symbol = symbol;
         this.calculator = calculator;
     }

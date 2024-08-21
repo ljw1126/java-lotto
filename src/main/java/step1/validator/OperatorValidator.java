@@ -9,9 +9,6 @@ import java.util.regex.Pattern;
 public class OperatorValidator implements ExpressionCount {
     private static final Pattern OPERATOR_PATTERN = Pattern.compile("[^\\d\\s]+");
 
-    public OperatorValidator() {
-    }
-
     public int countByExpression(String input) {
         assertNullOrBlank(input);
         assertOperator(input);

@@ -7,7 +7,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class Lotto {
     private static final int LOTTO_NUMBER_SIZE = 6;
@@ -54,7 +53,7 @@ public class Lotto {
     public List<String> mapToList() {
         return this.lottoNumbers.stream()
                 .map(LottoNumber::toString)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public boolean contains(LottoNumber bonus) {
